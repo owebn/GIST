@@ -12,7 +12,7 @@ from GIGN import GIGN
 
 GRAPH_TYPE = "Graph_GIGN"
 BATCH_SIZE = 128
-DIST = 4
+DIST = 5
 
 
 def parse_args(unparsed_args):
@@ -106,7 +106,6 @@ def predict(model, dataloader, device):
     data_map = dict()
     for cid, pka in zip(data_df["pdbid"], data_df["-logKd/Ki"]):
         data_map[pka] = cid
-
 
     label = [data_map[y] for y in label]
 
